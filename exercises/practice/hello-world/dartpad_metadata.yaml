@@ -1,0 +1,7 @@
+name: A Dart Exercise
+mode: dart
+files:
+  - name: main.dart
+    alternatePath: lib/hello_world.dart
+  - name: test.dart
+    alternatePath: test/hello_world_test.dart
