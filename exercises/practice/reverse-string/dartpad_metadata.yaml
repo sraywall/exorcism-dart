@@ -3,6 +3,6 @@ mode: dart
 files:
   - name: main.dart
     alternatePath: lib/main.dart
+  - name: solution.dart
   - name: test.dart
     alternatePath: test/test.dart
-  - name: solution.dart
