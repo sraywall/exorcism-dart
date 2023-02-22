@@ -2,6 +2,6 @@ name: A Dart Exercise
 mode: dart
 files:
   - name: main.dart
-    alternatePath: lib/hello_world.dart
+    alternatePath: lib/main.dart
   - name: test.dart
-    alternatePath: test/hello_world_test.dart
+    alternatePath: test/test.dart
