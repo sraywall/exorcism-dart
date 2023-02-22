@@ -1,4 +1,3 @@
-String reverse() {
-  // Replace the throw call and put your code here
-  throw UnimplementedError();
+class Anagram {
+  // Put your code here
 }
