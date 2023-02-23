@@ -1,9 +1,23 @@
-import 'package:anagram/anagram.dart';
-import 'package:test/test.dart';
-
 final anagram = Anagram();
 
 void main() {
+      if (!ListEquality().equals(anagram.findAnagrams('diaper', <String>['hello', 'world', 'zombies', 'pants'],<String>[]) { 
+      _result(false, ['no matches fails']); 
+    } else if (!ListEquality().equals(anagram.findAnagrams('solemn', <String>['lemons', 'cherry', 'melons']),<String>['lemons', 'melons']) { 
+      _result(false, ['detects two anagrams fails']); 
+    } else if (!ListEquality().equals(anagram.findAnagrams('good',  <String>['dog', 'goody']),<String>[]) {
+      _result(false, ['does not detect anagram subsets fails']); 
+    } else if (!ListEquality().equals(anagram.findAnagrams('good', <String>['dog', 'goody']),<String>[]) { 
+      _result(false, ['detects anagram fails']); 
+    } else if (!ListEquality().equals(anagram.findAnagrams('diaper', <String>['hello', 'world', 'zombies', 'pants'],<String>[]) { 
+      _result(false, ['detects three anagrams fails']); 
+    } else if (!ListEquality().equals(anagram.findAnagrams('diaper', <String>['hello', 'world', 'zombies', 'pants'],<String>[]) { 
+      _result(false, ['detects multiple anagrams with different case fails']); 
+    } else if (!ListEquality().equals(anagram.findAnagrams('diaper', <String>['hello', 'world', 'zombies', 'pants'],<String>[]){
+      _result(false, ['does not detect non-anagrams with identical checksum fails']); 
+    } else {
+      _result(true);
+    }  
   group('Anagram', () {
     test('no matches', () {
       final result = anagram.findAnagrams('diaper', <String>['hello', 'world', 'zombies', 'pants']);
@@ -87,3 +101,4 @@ void main() {
     }, skip: true);
   });
 }
+
