@@ -1,18 +1,9 @@
-String reverse(String s) {
-  return s.split("").reversed.join();
-  
-  //or
-  var arr = [];
-  
-  for(var ch in s.split("")){
-    arr.insert(0,ch);
+class Anagram {
+  findAnagrams(String s,List<String> lst){
+    return [for(var str in lst) if(str.toLowerCase() != s.toLowerCase() && sortLetters(s) == sortLetters(str)) str];
   }
   
-  //or
-  arr = [];
-  for(var ch in s.split("")){
-    arr = [ch,...arr];
+  String sortLetters(String s){
+    return s.toLowerCase().split("").sorted().join();
   }
-  
-  return arr.join();
 }
