@@ -1,4 +1,3 @@
-String twoFer() {
-  // Replace the throw call and put your code here
-  throw UnimplementedError();
+class Leap {
+  // Put your code here
 }
