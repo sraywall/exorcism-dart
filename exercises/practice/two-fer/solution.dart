@@ -1,18 +1,5 @@
-String reverse(String s) {
-  return s.split("").reversed.join();
-  
-  //or
-  var arr = [];
-  
-  for(var ch in s.split("")){
-    arr.insert(0,ch);
-  }
-  
-  //or
-  arr = [];
-  for(var ch in s.split("")){
-    arr = [ch,...arr];
-  }
-  
-  return arr.join();
+String twoFer([String? s]) {
+  return 'One for ${s ?? "you"}, one for me.';
+  //bad example because of concatenation and ?: instead of ??
+//   return 'One for ' + (s != null ? s : 'you') + ', one for me.';
 }
