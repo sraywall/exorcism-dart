@@ -1,61 +1,53 @@
-import 'package:scrabble_score/scrabble_score.dart';
-import 'package:test/test.dart';
-
 void main() {
-  group('ScrabbleScore', () {
-    test('lowercase letter', () {
-      final result = score('a');
-      expect(result, equals(1));
-    }, skip: false);
-
-    test('uppercase letter', () {
-      final result = score('A');
-      expect(result, equals(1));
-    }, skip: true);
-
-    test('valuable letter', () {
-      final result = score('f');
-      expect(result, equals(4));
-    }, skip: true);
-
-    test('short word', () {
-      final result = score('at');
-      expect(result, equals(2));
-    }, skip: true);
-
-    test('short, valuable word', () {
-      final result = score('zoo');
-      expect(result, equals(12));
-    }, skip: true);
-
-    test('medium word', () {
-      final result = score('street');
-      expect(result, equals(6));
-    }, skip: true);
-
-    test('medium, valuable word', () {
-      final result = score('quirky');
-      expect(result, equals(22));
-    }, skip: true);
-
-    test('long, mixed-case word', () {
-      final result = score('OxyphenButazone');
-      expect(result, equals(41));
-    }, skip: true);
-
-    test('english-like word', () {
-      final result = score('pinata');
-      expect(result, equals(8));
-    }, skip: true);
-
-    test('empty input', () {
-      final result = score('');
-      expect(result, equals(0));
-    }, skip: true);
-
-    test('entire alphabet available', () {
-      final result = score('abcdefghijklmnopqrstuvwxyz');
-      expect(result, equals(87));
-    }, skip: true);
-  });
+      List<String> fail_array = [];
+  
+      if(score('a') != 1){
+        fail_array.add('lowercase letter');
+      }
+  
+      if(score('A') != 1){
+        fail_array.add('uppercase letter');
+      }
+   
+      if(score('f') != 4){
+        fail_array.add('valuable letter');
+      }
+  
+      if(score('at') != 2){
+        fail_array.add('short word');
+      }  
+  
+      if(score('zoo') != 12){
+        fail_array.add('short valuable word');
+      }
+    
+      if(score('street') != 6){
+        fail_array.add('medium word');
+      } 
+  
+      if(score('quirky') != 22){
+        fail_array.add('medium valuable word');
+      }   
+   
+      if(score('OxyphenButazone') != 41){
+        fail_array.add('long mixed-case word word');
+      }   
+    
+      if(score('pinata') != 8){
+        fail_array.add('english-like world');
+      }   
+     
+      if(score('') != 0){
+        fail_array.add('empty input');
+      }   
+ 
+      if(score('abcdefghijklmnopqrstuvwxyz') != 87){
+        fail_array.add('entire alphabet available');
+      } 
+       
+      if(fail_array.isNotEmpty){
+        _result(false,fail_array);
+      } else {
+        _result(true, ["all sections pass!"]);
+      }
 }
