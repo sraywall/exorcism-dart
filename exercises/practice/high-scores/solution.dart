@@ -1,8 +1,13 @@
-//Doesn't work because integers not large enough to hold last tests
 import 'dart:math';
-class ArmstrongNumbers {
-  isArmstrongNumber(String num){ 
-    return num.split('').map((ch)=>pow(int.parse(ch),num.length)).reduce((curr,sum)=>curr+sum).toString() == num;
-  }
+import 'package:collection/collection.dart';//needed for tests
+
+class HighScores {
+  // Put your code here
+  var scores = <int>[];
+  HighScores(this.scores);
+  latest() => scores.last;
+  personalBest() => scores.fold(-1,(curr,acc)=>max(curr,acc));
+  personalTopThree() => scores.sorted((x,y)=>y-x).sublist(0, scores.length < 3 ? scores.length : 3);
+  
 }
 
