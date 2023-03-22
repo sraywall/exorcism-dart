@@ -10,4 +10,3 @@ class HighScores {
   personalTopThree() => scores.sorted((x,y)=>y-x).sublist(0, scores.length < 3 ? scores.length : 3);
   
 }
-
