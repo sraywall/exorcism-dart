@@ -1,8 +1,7 @@
 final differenceOfSquares = DifferenceOfSquares();
 
 void main() {
-  print('${differenceOfSquares.sumOfSquares(10)}');
-        List<String> fail_array = [];
+      List<String> fail_array = [];
       
       if (differenceOfSquares.squareOfSum(1) != 1){
         fail_array.add('square of sum 1');
