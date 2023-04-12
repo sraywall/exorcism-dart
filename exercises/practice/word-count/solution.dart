@@ -7,6 +7,6 @@ class WordCount {
       var s = match[0]??"";
       dict[s] = (dict[s]??0) + 1;
     }
-    print('$dict');
+    return dict;
   }
 }
