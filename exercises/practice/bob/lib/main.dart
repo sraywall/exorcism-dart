@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart'; //used in testing
-class WordCount {
+class Bob {
   // Put your code here
 }
