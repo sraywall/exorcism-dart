@@ -1,7 +1,12 @@
-import 'dart:math';
-class DifferenceOfSquares {
-  // Put your code here
-  squareOfSum(int n) => pow([for(var i = 1; i <= n; i++) i].reduce((acc,sum)=>acc+sum),2);
-  sumOfSquares(int n) => [for(var i = 1; i <= n; i++) i * i].reduce((acc,sum)=>acc+sum);
-  differenceOfSquares(int n) =>  squareOfSum(n) - sumOfSquares(n);
+import 'package:collection/collection.dart';
+
+class WordCount {
+  countWords(String str){
+    var dict = <String,int>{};
+    for(var match in RegExp(r"(\w+('\w+)?)").allMatches(str.toLowerCase())){
+      var s = match[0]??"";
+      dict[s] = (dict[s]??0) + 1;
+    }
+    print('$dict');
+  }
 }
