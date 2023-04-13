@@ -1,12 +1,19 @@
-import 'package:collection/collection.dart';
-
-class WordCount {
-  countWords(String str){
-    var dict = <String,int>{};
-    for(var match in RegExp(r"(\w+('\w+)?)").allMatches(str.toLowerCase())){
-      var s = match[0]??"";
-      dict[s] = (dict[s]??0) + 1;
+class Bob {
+  response(String str){
+    var letters = [for(var match in RegExp(r"[A-Za-z]").allMatches(str)) if(match[0] != null) match[0]??""];
+    bool allCaps = letters.isEmpty ? false : letters.every((s) =>s.toUpperCase() == s);
+    bool question = RegExp(r"\?\s*$").hasMatch(str);
+    bool silence = !RegExp(r"\S").hasMatch(str);
+    if(silence){
+      return 'Fine. Be that way!';
     }
-    return dict;
+    if(question){
+      if(allCaps){
+        return 'Calm down, I know what I\'m doing!';
+      } else {
+        return 'Sure.';
+      }
+    }
+    return allCaps ? 'Whoa, chill out!' : 'Whatever.';
   }
 }
