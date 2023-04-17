@@ -1,12 +1,6 @@
-import 'package:collection/collection.dart';
-
-class WordCount {
-  countWords(String str){
-    var dict = <String,int>{};
-    for(var match in RegExp(r"(\w+('\w+)?)").allMatches(str.toLowerCase())){
-      var s = match[0]??"";
-      dict[s] = (dict[s]??0) + 1;
-    }
-    return dict;
+class Raindrops {
+  convert (int i){
+    var str = '${i %3 == 0 ? 'Pling' : ""}${i % 5 == 0 ? 'Plang' : ""}${i % 7 == 0 ? 'Plong' : ""}';
+    return str == '' ? '$i' : str;
   }
 }

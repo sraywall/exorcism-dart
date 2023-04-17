@@ -1,98 +1,84 @@
-import 'package:raindrops/raindrops.dart';
-import 'package:test/test.dart';
-
 void main() {
   final raindrops = Raindrops();
+  List<String> failArray = [];
 
-  group('Raindrops', () {
-    test('the sound for 1 is 1', () {
-      final result = raindrops.convert(1);
-      expect(result, equals('1'));
-    }, skip: false);
+  if (raindrops.convert(1) != '1'){
+    failArray.add('the sound for 1 is 1');
+  }
 
-    test('the sound for 3 is Pling', () {
-      final result = raindrops.convert(3);
-      expect(result, equals('Pling'));
-    }, skip: true);
+  if (raindrops.convert(3) != 'Pling'){
+    failArray.add('the sound for 3 is Pling');
+  }
+  
+  if (raindrops.convert(5) != 'Plang'){
+    failArray.add('the sound for 5 is Plang');
+  }
+  
+  if (raindrops.convert(7) != 'Plong'){
+    failArray.add('the sound for 7 is Plong');
+  }
+  
+  if (raindrops.convert(6) != 'Pling'){
+    failArray.add('the sound for 6 is Pling as it has a factor 3');
+  }
+  
+  if (raindrops.convert(8) != '8'){
+    failArray.add('2 to the power 3 does not make a raindrop sound as 3 is the exponent not the base');
+  }
+  
+  if (raindrops.convert(9) != 'Pling'){
+    failArray.add('the sound for 9 is Pling as it has a factor 3');
+  }
+  
+  if (raindrops.convert(10) != 'Plang'){
+    failArray.add('the sound for 10 is Plang as it has a factor 5');
+  }
+  
+  if (raindrops.convert(14) != 'Plong'){
+    failArray.add('the sound for 14 is Plong as it has a factor of 7');
+  }
+  
+  if (raindrops.convert(15) != 'PlingPlang'){
+    failArray.add('the sound for 15 is PlingPlang as it has factors 3 and 5');
+  }
+  
+  if (raindrops.convert(21) != 'PlingPlong'){
+    failArray.add('the sound for 21 is PlingPlong as it has factors 3 and 7');
+  }
+  
+  if (raindrops.convert(25) != 'Plang'){
+    failArray.add('the sound for 25 is Plang as it has a factor 5');
+  }
+  
+  if (raindrops.convert(27) != 'Pling'){
+    failArray.add('the sound for 27 is Pling as it has a factor 3');
+  }
+  
+  if (raindrops.convert(35) != 'PlangPlong'){
+    failArray.add('the sound for 35 is PlangPlong as it has factors 5 and 7');
+  }
+  
+  if (raindrops.convert(49) != 'Plong'){
+    failArray.add('the sound for 49 is Plong as it has a factor 7');
+  }
+  
+  if (raindrops.convert(52) != '52'){
+    failArray.add('the sound for 52 is 52');
+  }
+  
+  if (raindrops.convert(105) != 'PlingPlangPlong'){
+    failArray.add('the sound for 105 is PlingPlangPlong as it has factors 3, 5 and 7');
+  }
+  
+  if (raindrops.convert(3125) != 'Plang'){
+    failArray.add('the sound for 3125 is Plang as it has a factor 5');
+  }
 
-    test('the sound for 5 is Plang', () {
-      final result = raindrops.convert(5);
-      expect(result, equals('Plang'));
-    }, skip: true);
+  failArray = [for(var str in failArray) '($str) test fails'];
 
-    test('the sound for 7 is Plong', () {
-      final result = raindrops.convert(7);
-      expect(result, equals('Plong'));
-    }, skip: true);
-
-    test('the sound for 6 is Pling as it has a factor 3', () {
-      final result = raindrops.convert(6);
-      expect(result, equals('Pling'));
-    }, skip: true);
-
-    test('2 to the power 3 does not make a raindrop sound as 3 is the exponent not the base', () {
-      final result = raindrops.convert(8);
-      expect(result, equals('8'));
-    }, skip: true);
-
-    test('the sound for 9 is Pling as it has a factor 3', () {
-      final result = raindrops.convert(9);
-      expect(result, equals('Pling'));
-    }, skip: true);
-
-    test('the sound for 10 is Plang as it has a factor 5', () {
-      final result = raindrops.convert(10);
-      expect(result, equals('Plang'));
-    }, skip: true);
-
-    test('the sound for 14 is Plong as it has a factor of 7', () {
-      final result = raindrops.convert(14);
-      expect(result, equals('Plong'));
-    }, skip: true);
-
-    test('the sound for 15 is PlingPlang as it has factors 3 and 5', () {
-      final result = raindrops.convert(15);
-      expect(result, equals('PlingPlang'));
-    }, skip: true);
-
-    test('the sound for 21 is PlingPlong as it has factors 3 and 7', () {
-      final result = raindrops.convert(21);
-      expect(result, equals('PlingPlong'));
-    }, skip: true);
-
-    test('the sound for 25 is Plang as it has a factor 5', () {
-      final result = raindrops.convert(25);
-      expect(result, equals('Plang'));
-    }, skip: true);
-
-    test('the sound for 27 is Pling as it has a factor 3', () {
-      final result = raindrops.convert(27);
-      expect(result, equals('Pling'));
-    }, skip: true);
-
-    test('the sound for 35 is PlangPlong as it has factors 5 and 7', () {
-      final result = raindrops.convert(35);
-      expect(result, equals('PlangPlong'));
-    }, skip: true);
-
-    test('the sound for 49 is Plong as it has a factor 7', () {
-      final result = raindrops.convert(49);
-      expect(result, equals('Plong'));
-    }, skip: true);
-
-    test('the sound for 52 is 52', () {
-      final result = raindrops.convert(52);
-      expect(result, equals('52'));
-    }, skip: true);
-
-    test('the sound for 105 is PlingPlangPlong as it has factors 3, 5 and 7', () {
-      final result = raindrops.convert(105);
-      expect(result, equals('PlingPlangPlong'));
-    }, skip: true);
-
-    test('the sound for 3125 is Plang as it has a factor 5', () {
-      final result = raindrops.convert(3125);
-      expect(result, equals('Plang'));
-    }, skip: true);
-  });
+  if(failArray.isNotEmpty){
+    _result(false,failArray);
+  } else {
+    _result(true, ["all sections pass!"]);
+  }
 }
